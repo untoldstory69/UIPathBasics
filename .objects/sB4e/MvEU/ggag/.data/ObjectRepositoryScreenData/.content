@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="fpcu2ftCRU-vZO3ZLUoZFg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" FilePath="C:\Users\kishor.sharma\Downloads\DoubleUI\doubleui.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVFhH7ZfJbhNBEIZ98B4Hx7xCOEa8FgEMiWM7G0EKS8JOHA6WOCH5OQgkZCAbBDBmMQSQeAxfiqrq6Z4K0y33AeRIuKVPMxpr6qv/n5MTwzM89er02lx9BgYBuRO2H/42QRBYrwQv0Ov1BsLJW6DVakGz2WToXj8/++QXnH70E/kBpXWk8R05gtIa8Q3GHiIPvsLYfaILxXtdmHh81HeudwOldRJGUhYaaddIi3c/Q/FOhG2WxH8Ba8ovKCRC4e1PcIq49ZEZXe1YZ0liC7iq0klVSod0FaUrHxQ3iXbfud4NRNVqoZZ2hBC50UbeQ+E6cu2ddZbEe4EoZUexgmIjbLNwlKXI8lsYuUocWmdJYgu4quKUotqCSMkYKbJ0CCNX3jD95no3IJPGpCRcQiGSX3wdcgD5hQPrLIn3AkaIFIxUJ0UhyjS5+X3IzSGze9ZZktgCrqpk0jwJKaWWsnBPgdJcfReytR1Gv+/CuwFKqmvNz+uUoZClSpitvYJsFZl5ydhmSbwXoJTHklJKLSVhSKYSQGaa2GZssySxBVyfIDerhCaplmLKTIUIpVPbkL78QnFpy7zvwrsBLc2E1RohS7VQSdPlTUhdJJ5bZ0n8FyBxKE1TSiPdghQK02W8opC58AxS55HJDessSWwB1yfgav+QspiFWroBSZQmJ59C8pxCv+/Cu4Ezy7sqZfl4yiRLI6FkfCGwzpJ4L/CvOBkL1KpTDboZBLVqpRH+Oxie//YkEr8ButZLT8xwVOwAAAAASUVORK5CYII=" Selector="&lt;wnd app='doubleui.exe' cls='HwndWrapper*' title='DoubleUI' /&gt;" Title="DoubleUI">
+      <imageRef attrName="InformativeScreenshot" originalValue="1a4f2560f787589bd9a6f6f139902c71.png" xmlns="">03sccMsDFdUmAeKNm1htpHQ</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>
