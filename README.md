@@ -12,5 +12,6 @@
 	- Hovering element
 	- Enterting Text	
 	- Clicking Button
+- Table Extraction : Extract result from Google and store it in excel sheet
 
 
