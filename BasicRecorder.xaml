@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="BasicRecorder" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1052,1449" sap2010:WorkflowViewState.IdRef="BasicRecorder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="BasicRecorder" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1052,1529" sap2010:WorkflowViewState.IdRef="BasicRecorder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -34,6 +34,9 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -71,6 +74,8 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Recorder Double UI" sap:VirtualizedContainerService.HintSize="546,1384" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -79,13 +84,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: DoubleUI" sap:VirtualizedContainerService.HintSize="484,1273" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="bf483c3c-5631-426c-a9e8-fcdcb0be9ead" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: DoubleUI" sap:VirtualizedContainerService.HintSize="484,1520" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="bf483c3c-5631-426c-a9e8-fcdcb0be9ead" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,983" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1305" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="TransactionNumber" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -138,11 +146,23 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Transaction #'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="bf483c3c-5631-426c-a9e8-fcdcb0be9ead" TextString="[TransactionNumber]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable CvType="AnyWordGroup" DesignTimeRectangle="521, 126, 46, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'571149'" FullSelectorArgument="&lt;ctrl automationid='transnrlabel' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='transnrlabel' role='text' /&gt;" Guid="31e9dd00-a11b-4419-bd93-5f9686073341" InformativeScreenshot="f44b4e9df9f181ce69922bcc086d7156.png" ScopeSelectorArgument="&lt;wnd app='doubleui.exe' cls='HwndWrapper*' title='DoubleUI' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvTextArgument="Transaction #:" CvType="Text" DesignTimeRectangle="428, 126, 88, 16" ElementType="Text" FriendlyName="'Transaction #'" FullSelectorArgument="&lt;ctrl name='Transaction #:' role='text' /&gt;&lt;ctrl name='Transaction #:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Transaction #:' role='text' /&gt;&lt;ctrl name='Transaction #:' role='text' automationid='' check:text='Transaction #:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAUCAYAAAAA5FpZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH9SURBVFhH7ZZtksIgDIbL9Ex6onoaPIqepGehV2AbwgspILV+sLsz/HhnxJBAnoTosCyL7WqnDryxOvDG6sAbqwNvrAD8fhntMAxFKXWyejaZ81+UMbO9nkc73fi+xtztZVRh/WnxeZEPcaydVexwc7/Y8aTtbP4HZKkU+LfFBZ3sbWWVwi/paeAIrPXZjkpZ5e3zldfhNQg/Z5u01SsA2E96jjHnqz2v3Ve0eXCw5XbuXNjUdMt8aH/a4eke8gsx3X1ijs6+03iOlY8h4dPa5Z/4HwS+ghYXZNjxAAAEGBQjJEtx/XjKQcQ1oORnwZftOEeu8fmZuNna3z/a2VcWGkJuKJxUbQQfBo5ESkpBpBXeJr8fT4pheOCucLHQm3014AW/TVzxGXaaybLwqeTMpnxLxZH6CHBOJB8NNeDBjqf7ICn5Y47OSeNK1YCX/Nj+GnD2jQXc+8EkvQUcoAHiSIcjhowjiwXQmKESxl8A7mK1Hil0GfmEXgUOxf0RAmybp+8K9PsjxcXzNuf7oAmk3gYuL4OufAZ4Gk8WK7fx+tFLIuEuVeDehjtn64PAKT/cQcKv6b2R4r/DU6LD3QW9716Hc8dFf5mYtDFo9g0JJmdnf0dp1K3xsjM95OKZB4BznLhXwofS/ElF4F3fUwfeWB14Y3XgjdWBN9VifwChMZLHK11O4wAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Display Transaction Number" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The transaction number is &quot; + TransactionNumber]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="fpcu2ftCRU-vZO3ZLUoZFg" FilePath="C:\Users\kishor.sharma\Downloads\DoubleUI\doubleui.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVFhH7ZfJbhNBEIZ98B4Hx7xCOEa8FgEMiWM7G0EKS8JOHA6WOCH5OQgkZCAbBDBmMQSQeAxfiqrq6Z4K0y33AeRIuKVPMxpr6qv/n5MTwzM89er02lx9BgYBuRO2H/42QRBYrwQv0Ov1BsLJW6DVakGz2WToXj8/++QXnH70E/kBpXWk8R05gtIa8Q3GHiIPvsLYfaILxXtdmHh81HeudwOldRJGUhYaaddIi3c/Q/FOhG2WxH8Ba8ovKCRC4e1PcIq49ZEZXe1YZ0liC7iq0klVSod0FaUrHxQ3iXbfud4NRNVqoZZ2hBC50UbeQ+E6cu2ddZbEe4EoZUexgmIjbLNwlKXI8lsYuUocWmdJYgu4quKUotqCSMkYKbJ0CCNX3jD95no3IJPGpCRcQiGSX3wdcgD5hQPrLIn3AkaIFIxUJ0UhyjS5+X3IzSGze9ZZktgCrqpk0jwJKaWWsnBPgdJcfReytR1Gv+/CuwFKqmvNz+uUoZClSpitvYJsFZl5ydhmSbwXoJTHklJKLSVhSKYSQGaa2GZssySxBVyfIDerhCaplmLKTIUIpVPbkL78QnFpy7zvwrsBLc2E1RohS7VQSdPlTUhdJJ5bZ0n8FyBxKE1TSiPdghQK02W8opC58AxS55HJDessSWwB1yfgav+QspiFWroBSZQmJ59C8pxCv+/Cu4Ezy7sqZfl4yiRLI6FkfCGwzpJ4L/CvOBkL1KpTDboZBLVqpRH+Oxie//YkEr8ButZLT8xwVOwAAAAASUVORK5CYII=" InformativeScreenshot="1a4f2560f787589bd9a6f6f139902c71.png" Reference="HZyc_xvDd02rp2XwomxU2w/ggagVcHGAUqpYZt7WiJ3Uw" Selector="&lt;wnd app='doubleui.exe' cls='HwndWrapper*' title='DoubleUI' /&gt;" Title="DoubleUI" />
+        <uix:TargetApp Area="0, 0, 0, 0" FilePath="DoubleUI\doubleui.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVFhH7ZfJbhNBEIZ98B4Hx7xCOEa8FgEMiWM7G0EKS8JOHA6WOCH5OQgkZCAbBDBmMQSQeAxfiqrq6Z4K0y33AeRIuKVPMxpr6qv/n5MTwzM89er02lx9BgYBuRO2H/42QRBYrwQv0Ov1BsLJW6DVakGz2WToXj8/++QXnH70E/kBpXWk8R05gtIa8Q3GHiIPvsLYfaILxXtdmHh81HeudwOldRJGUhYaaddIi3c/Q/FOhG2WxH8Ba8ovKCRC4e1PcIq49ZEZXe1YZ0liC7iq0klVSod0FaUrHxQ3iXbfud4NRNVqoZZ2hBC50UbeQ+E6cu2ddZbEe4EoZUexgmIjbLNwlKXI8lsYuUocWmdJYgu4quKUotqCSMkYKbJ0CCNX3jD95no3IJPGpCRcQiGSX3wdcgD5hQPrLIn3AkaIFIxUJ0UhyjS5+X3IzSGze9ZZktgCrqpk0jwJKaWWsnBPgdJcfReytR1Gv+/CuwFKqmvNz+uUoZClSpitvYJsFZl5ydhmSbwXoJTHklJKLSVhSKYSQGaa2GZssySxBVyfIDerhCaplmLKTIUIpVPbkL78QnFpy7zvwrsBLc2E1RohS7VQSdPlTUhdJJ5bZ0n8FyBxKE1TSiPdghQK02W8opC58AxS55HJDessSWwB1yfgav+QspiFWroBSZQmJ59C8pxCv+/Cu4Ezy7sqZfl4yiRLI6FkfCGwzpJ4L/CvOBkL1KpTDboZBLVqpRH+Oxie//YkEr8ButZLT8xwVOwAAAAASUVORK5CYII=" InformativeScreenshot="1a4f2560f787589bd9a6f6f139902c71.png" Selector="&lt;wnd app='doubleui.exe' cls='HwndWrapper*' title='DoubleUI' /&gt;" Title="DoubleUI" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
   </Sequence>
