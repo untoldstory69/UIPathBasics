@@ -1,5 +1,9 @@
 {
-  "Tags": [],
+  "Tags": [
+    {
+      "Key": "TableExtraction"
+    }
+  ],
   "SeparateRuntimeDependencies": false,
   "IncludeSources": true
 }
