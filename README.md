@@ -18,5 +18,8 @@ Practice 2: Set Data https://academy.uipath.com/learningpath-viewer/8233/1/50688
 - Read Data from Excel 
 - Store Data in DataTable
 - For Each loop 
+Practice 3: Highlight WFT Type Items on ACME https://academy.uipath.com/learningpath-viewer/8233/1/506883/30 
+- Highight Element
+- For each through UI ELEMENT
 
 
