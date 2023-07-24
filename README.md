@@ -14,4 +14,9 @@
 	- Clicking Button
 - Table Extraction : Extract result from Google and store it in excel sheet
 
+Practice 2: Set Data https://academy.uipath.com/learningpath-viewer/8233/1/506883/30
+- Read Data from Excel 
+- Store Data in DataTable
+- For Each loop 
+
 
